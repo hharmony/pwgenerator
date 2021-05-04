@@ -45,13 +45,53 @@ function genPW(){
     genPW();
   };
   //concatenating from https://www.w3schools.com/jsref/jsref_concat_array.asp#:~:text=The%20concat()%20method%20is,values%20of%20the%20joined%20arrays.
-  /*if (lowerConfirm && upperConfirm && numConfirm && specConfirm) {
-    pw = lower.concat(upper, num, spec);
 
-    }
-    console.log(pw); 
-  }*/
-  if (lowerConfirm, upperConfirm) {
+ //4 options 
+ if (lowerConfirm && upperConfirm && numConfirm && specConfirm) {
+  var pwOut = [];
+  for (i=0 ; i < pwLength; i++) {
+    pw = lower.concat(upper,num,spec)[Math.floor(Math.random()*72)];
+    pwOut.push(pw);
+  }
+  console.log(pwOut.join(''));
+}
+
+ //3 options
+ else if (lowerConfirm && upperConfirm && numConfirm && !specConfirm) {
+  var pwOut = [];
+  for (i=0 ; i < pwLength; i++) {
+    pw = lower.concat(upper, num)[Math.floor(Math.random()*62)];
+    pwOut.push(pw);
+  }
+  console.log(pwOut.join(''));
+}
+else if (lowerConfirm && upperConfirm && specConfirm && !numConfirm) {
+  var pwOut = [];
+  for (i=0 ; i < pwLength; i++) {
+    pw = lower.concat(upper, spec)[Math.floor(Math.random()*62)];
+    pwOut.push(pw);
+  }
+  console.log(pwOut.join(''));
+}
+else if (lowerConfirm && specConfirm && numConfirm && !upperConfirm) {
+  var pwOut = [];
+  for (i=0 ; i < pwLength; i++) {
+    pw = lower.concat(spec, num)[Math.floor(Math.random()*46)];
+    pwOut.push(pw);
+  }
+  console.log(pwOut.join(''));
+}
+else if (specConfirm && upperConfirm && numConfirm && !lowerConfirm) {
+  var pwOut = [];
+  for (i=0 ; i < pwLength; i++) {
+    pw = spec.concat(upper, num)[Math.floor(Math.random()*46)];
+    pwOut.push(pw);
+  }
+  console.log(pwOut.join(''));
+}
+
+ //2 options
+  else if (lowerConfirm && upperConfirm && !numConfirm && !specConfirm) {
     var pwOut = [];
     for (i=0 ; i < pwLength; i++) {
       pw = lower.concat(upper)[Math.floor(Math.random()*52)];
@@ -59,8 +99,48 @@ function genPW(){
     }
     console.log(pwOut.join(''));
   }
-
-  if (lowerConfirm) {
+  else if (lowerConfirm && numConfirm && !upperConfirm && !specConfirm) {
+    var pwOut = [];
+    for (i=0 ; i < pwLength; i++) {
+      pw = lower.concat(num)[Math.floor(Math.random()*36)];
+      pwOut.push(pw);
+    }
+    console.log(pwOut.join(''));
+  }
+  else if (lowerConfirm && specConfirm && !upperConfirm && !numConfirm) {
+    var pwOut = [];
+    for (i=0 ; i < pwLength; i++) {
+      pw = lower.concat(spec)[Math.floor(Math.random()*36)];
+      pwOut.push(pw);
+    }
+    console.log(pwOut.join(''));
+  }
+  else if (upperConfirm && numConfirm && !lowerConfirm && specConfirm) {
+    var pwOut = [];
+    for (i=0 ; i < pwLength; i++) {
+      pw = upper.concat(num)[Math.floor(Math.random()*36)];
+      pwOut.push(pw);
+    }
+    console.log(pwOut.join(''));
+  }
+  else if (upperConfirm && specConfirm && lowerConfirm && numConfirm) {
+    var pwOut = [];
+    for (i=0 ; i < pwLength; i++) {
+      pw = upper.concat(spec)[Math.floor(Math.random()*36)];
+      pwOut.push(pw);
+    }
+    console.log(pwOut.join(''));
+  }
+  else if (numConfirm && specConfirm && !lowerConfirm && !upperConfirm) {
+    var pwOut = [];
+    for (i=0 ; i < pwLength; i++) {
+      pw = num.concat(spec)[Math.floor(Math.random()*20)];
+      pwOut.push(pw);
+    }
+    console.log(pwOut.join(''));
+  }
+//1 option
+  else if (lowerConfirm && !upperConfirm && !specConfirm && !numConfirm) {
     var pwOut = [];
     for (i = 0; i < pwLength; i++) {
       pw = lower[Math.floor(Math.random()*26)];
@@ -68,7 +148,35 @@ function genPW(){
     }
     console.log(pwOut.join(''))
   }
-
+  else if (!lowerConfirm && upperConfirm && !specConfirm && !numConfirm) {
+    var pwOut = [];
+    for (i = 0; i < pwLength; i++) {
+      pw = upper[Math.floor(Math.random()*26)];
+      pwOut.push(pw);
+    }
+    console.log(pwOut.join(''))
+  }
+  else if (!lowerConfirm && !upperConfirm && !specConfirm && numConfirm) {
+    var pwOut = [];
+    for (i = 0; i < pwLength; i++) {
+      pw = num[Math.floor(Math.random()*10)];
+      pwOut.push(pw);
+    }
+    console.log(pwOut.join(''))
+  }
+  else if (specConfirm && !numConfirm && !upperConfirm && !lowerConfirm) {
+    var pwOut = [];
+    for (i = 0; i < pwLength; i++) {
+      pw = spec[Math.floor(Math.random()*10)];
+      pwOut.push(pw);
+    }
+    console.log(pwOut.join(''))
+  }
+ //nothing chosen
+  else {
+    window.alert("Please select at least one option.");
+    genPW();
+  }
 }
 /*
     for (i = 0; i < pwLength; i++) {
@@ -89,25 +197,6 @@ function genPW(){
 
 
 
-//3
-  //lower, upper, num,
-  //lower, upper, spec
-  //lower, num, spec
-  //upper, num, spec
-  
-//2
-  //lower upper
-  //lower num
-  //lower spec
-  //upper num
-  //upper spec
-  //num spec
-
-//1
-  //lower
-  //upper
-  //num
-  //spec
 
 
 
