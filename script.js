@@ -1,3 +1,10 @@
+/* 
+https://www.w3schools.com/jsref/jsref_join.asp
+concatenating from https://www.w3schools.com/jsref/jsref_concat_array.asp#:~:text=The%20concat()%20method%20is,values%20of%20the%20joined%20arrays.
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+https://www.codegrepper.com/code-examples/javascript/js+pull+random+items+from+multiple+arrays
+*/
+
 // Assignment code here
 //password options
 var lower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -19,7 +26,6 @@ function generatePassword(){
     window.alert("Please choose a number between 8-128.");
     generatePassword();
   };
-  //concatenating from https://www.w3schools.com/jsref/jsref_concat_array.asp#:~:text=The%20concat()%20method%20is,values%20of%20the%20joined%20arrays.
 
  //4 options 
  if (lowerConfirm && upperConfirm && numConfirm && specConfirm) {
